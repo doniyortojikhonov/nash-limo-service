@@ -3,65 +3,528 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Under Development</title>
+        <link
+            href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
+            rel="stylesheet"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+        />
+        <link rel="stylesheet" href="styles.css" />
+        <title>FAQ and Policy Page</title>
         <style>
             body {
                 font-family: Arial, sans-serif;
                 margin: 0;
                 padding: 0;
+                background-color: #f4f4f4;
+            }
+            .container {
+                width: 90%;
+                max-width: 1200px;
+                margin: auto;
+                padding: 90px 20px 60px 20px;
+            }
+            .toggle-buttons {
                 display: flex;
                 justify-content: center;
-                align-items: center;
-                height: 100vh;
-                background-color: #f0f0f0;
+                margin-bottom: 40px;
             }
-
-            .container {
-                text-align: center;
-                padding: 20px;
-                border-radius: 8px;
-                background-color: #fff;
-                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-                max-width: 90%;
-                width: 300px;
-            }
-
-            h1 {
-                color: #333;
-                margin-bottom: 20px;
-            }
-
-            p {
-                color: #666;
-                margin-bottom: 30px;
-            }
-
-            .btn {
-                display: inline-block;
-                padding: 10px 20px;
-                background-color: #007bff;
+            .toggle-buttons button {
+                background-color: #a09d9d;
                 color: #fff;
-                text-decoration: none;
+                border: none;
+                padding: 10px 20px;
+                cursor: pointer;
+                font-size: 16px;
+                margin: 0 10px;
                 border-radius: 5px;
-                transition: background-color 0.3s ease;
             }
-
-            .btn:hover {
-                background-color: #0056b3;
+            .toggle-buttons button.active {
+                background-color: #1eaf40;
             }
-
-            @media (max-width: 600px) {
-                .container {
-                    width: 90%;
-                }
+            .faq-section,
+            .policy-section {
+                background: #fff;
+                padding: 20px;
+                margin-bottom: 20px;
+                border-radius: 8px;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            }
+            .faq-title,
+            .policy-title {
+                font-size: 24px;
+                font-weight: bold;
+                margin-bottom: 10px;
+                color: #da042a;
+            }
+            .faq-item {
+                margin-bottom: 10px;
+            }
+            .faq-question {
+                font-size: 18px;
+                font-weight: bold;
+                cursor: pointer;
+                padding: 10px;
+                background: #eee;
+                border-radius: 4px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+            .faq-answer {
+                display: none;
+                padding: 10px;
+                border-left: 4px solid #007bff;
+                margin-top: 5px;
+                background: #f9f9f9;
+                border-radius: 4px;
+            }
+            .toggle-btn {
+                background: none;
+                border: none;
+                font-size: 24px;
+                cursor: pointer;
+                color: #da042a;
+            }
+            header {
+                background-color: #000;
             }
         </style>
     </head>
     <body>
+        <header>
+            <nav>
+                <div class="nav__bar">
+                    <div class="logo nav__logo">
+                        <a href="./index.html">
+                            <h2><span>SHM</span> Limo Transportation</h2>
+                        </a>
+                    </div>
+                    <div class="nav__menu__btn" id="menu-btn">
+                        <i class="ri-menu-3-line"></i>
+                    </div>
+                </div>
+                <ul class="nav__links" id="nav-links">
+                    <li><a href="index.html#home">HOME</a></li>
+                    <li><a href="index.html#about">ABOUT</a></li>
+                    <li><a href="index.html#service">SERVICE</a></li>
+                    <li><a href="index.html#fleet">FLEET</a></li>
+                    <li><a href="./faqs.html">FAQs & POLICY</a></li>
+                    <a href="./contactUs.html">
+                        <button class="btn">CONTACT US</button>
+                    </a>
+                </ul>
+            </nav>
+        </header>
+
         <div class="container">
-            <h1>Under Development</h1>
-            <p>We're currently working on this page. Check back soon!</p>
-            <a href="./index.html" class="btn">Go Back</a>
+            <div class="toggle-buttons">
+                <button id="policy-btn" class="active">Policies</button>
+                <button id="faq-btn">FAQs</button>
+            </div>
+            <div id="policy-section" class="policy-section">
+                <div class="faq-title">Policies</div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Billing
+                        <button class="toggle-btn">+</button>
+                    </div>
+                    <div class="faq-answer">
+                        A 3.5% credit card processing fee applies to all Visa,
+                        MasterCard, Discover, and Amex transactions. This fee
+                        covers the processing costs associated with credit card
+                        payments.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Car Seats
+                        <button class="toggle-btn">+</button>
+                    </div>
+                    <div class="faq-answer">
+                        SHM Limo Transportation will provide a car seat, if
+                        available, free of charge. The customer uses it at their
+                        own risk and is responsible for its installation and any
+                        associated liabilities.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Cleaning Fee
+                        <button class="toggle-btn">+</button>
+                    </div>
+                    <div class="faq-answer">
+                        A biohazard cleaning fee of $500 per occurrence applies
+                        for cleaning and sanitation of any bodily fluids.<br />
+                        • A cleaning fee of $250 applies for detailed cleaning
+                        required if passengers trash the vehicle. <br />• A
+                        cleaning fee equal to 8 hours of the vehicle’s
+                        applicable rate applies for the ionization process
+                        needed to remove any smoke odor.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Drugs, Smoking, and Alcohol
+                        <button class="toggle-btn">+</button>
+                    </div>
+                    <div class="faq-answer">
+                        No drugs, no alcohol, and no smoking are permitted in
+                        the vehicle.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Trip Updates (Additional Stops)
+                        <button class="toggle-btn">+</button>
+                    </div>
+                    <div class="faq-answer">
+                        A $25 stop fee applies for the first stop less than 2
+                        miles out of the scheduled route, for a maximum of 15
+                        minutes. Wait time applies beyond the stop fee after the
+                        grace period ends. <br />• Any additional stops after
+                        the first stop or any stop more than 2 miles outside the
+                        scheduled route will convert the reservation to an
+                        hourly rate with the applicable minimum billable hours.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Lost and Found
+                        <button class="toggle-btn">+</button>
+                    </div>
+                    <div class="faq-answer">
+                        SHM Limo Transportation is not responsible for any
+                        personal items left in the vehicle. If you believe you
+                        have left something behind, please contact us
+                        immediately.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Cancellation Policy
+                        <button class="toggle-btn">+</button>
+                    </div>
+                    <div class="faq-answer">
+                        Full Refund: Cancel 12 hours or more before your
+                        scheduled service to receive a full refund.<br />
+                        • 50% Refund: Cancel between 6 to 12 hours before your
+                        scheduled service to receive a 50% refund. <br />• 25%
+                        Refund: Cancel between 3 to 6 hours before your
+                        scheduled service to receive a 25% refund. <br />•
+                        Cancellations made less than 3 hours before the
+                        scheduled service are non-refundable.
+                    </div>
+                </div>
+            </div>
+            <div id="faq-section" class="faq-section" style="display: none">
+                <div class="faq-title">Frequently Asked Questions</div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        What areas do you serve?
+                        <button class="toggle-btn">+</button>
+                    </div>
+                    <div class="faq-answer">
+                        We serve the entire Nashville area, including Spring
+                        Hill and Columbia.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        How far in advance should I book?
+                        <button class="toggle-btn">+</button>
+                    </div>
+                    <div class="faq-answer">
+                        Please book at least 4 hours in advance to ensure
+                        availability.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        How soon will my chauffeur arrive for pick-up?
+                        <button class="toggle-btn">+</button>
+                    </div>
+                    <div class="faq-answer">
+                        Your chauffeur will arrive 15 minutes before your
+                        scheduled pickup time. We offer a complimentary
+                        15-minute waiting period. Additional waiting time will
+                        be charged at the hourly rate for SUV and sedan
+                        services.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        What areas do you serve?
+                        <button class="toggle-btn">+</button>
+                    </div>
+                    <div class="faq-answer">
+                        We serve the entire Nashville area, including Spring
+                        Hill and Columbia.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        How far in advance should I book?
+                        <button class="toggle-btn">+</button>
+                    </div>
+                    <div class="faq-answer">
+                        Please book at least 4 hours in advance to ensure
+                        availability.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        How soon will my chauffeur arrive for pick-up?
+                        <button class="toggle-btn">+</button>
+                    </div>
+                    <div class="faq-answer">
+                        Your chauffeur will arrive 15 minutes before your
+                        scheduled pickup time. We offer a complimentary
+                        15-minute waiting period. Additional waiting time will
+                        be charged at the hourly rate for SUV and sedan
+                        services.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        What happens if my flight is delayed?
+                        <button class="toggle-btn">+</button>
+                    </div>
+                    <div class="faq-answer">
+                        If your flight is delayed, we track it using FlightAware
+                        and Google. We provide a 20-25 minute grace period after
+                        your flight lands. Any additional waiting time will be
+                        charged at the hourly rate for SUV and sedan services.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Is there minimum duration for hourly ride service?
+                        <button class="toggle-btn">+</button>
+                    </div>
+                    <div class="faq-answer">
+                        Yes, our hourly ride services require a minimum booking
+                        duration of 3 hours.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Do you offer discounts for frequent travelers or
+                        corporate clients?
+                        <button class="toggle-btn">+</button>
+                    </div>
+                    <div class="faq-answer">
+                        Yes, we offer the VIP Gold Program. Benefits include a
+                        15% discount on all bookings, complimentary bottled
+                        water, and priority booking status.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        What payment methods do you accept?
+                        <button class="toggle-btn">+</button>
+                    </div>
+                    <div class="faq-answer">
+                        We accept credit card payments.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        What types of vehicles do you offer?
+                        <button class="toggle-btn">+</button>
+                    </div>
+                    <div class="faq-answer">
+                        Currently, we offer only SUVs for our transportation
+                        services. Limos and Sprinters are not yet available in
+                        our fleet.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Can I make changes to my reservation?
+                        <button class="toggle-btn">+</button>
+                    </div>
+                    <div class="faq-answer">
+                        Yes, changes to reservations can be made up to 2 hours
+                        before the scheduled pickup time. Changes are subject to
+                        vehicle availability and may incur additional charges.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        How I contact customer service?
+                        <button class="toggle-btn">+</button>
+                    </div>
+                    <div class="faq-answer">
+                        You can contact us via email at shmllc.7@gmail.com or
+                        call us at 629-900-5454. Our customer service is
+                        available 24/7.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Do you provide transportation for special events?
+                        <button class="toggle-btn">+</button>
+                    </div>
+                    <div class="faq-answer">
+                        Yes, we provide transportation for various special
+                        events including weddings, corporate events, and private
+                        parties. Please contact us for special event rates and
+                        availability.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Are pets allowed in the vehicle?
+                        <button class="toggle-btn">+</button>
+                    </div>
+                    <div class="faq-answer">
+                        Pets are allowed in the vehicle upon request. A pet
+                        cleaning fee may apply. Please notify us in advance if
+                        you plan to travel with a pet.
+                    </div>
+                </div>
+            </div>
         </div>
+
+        <footer class="footer">
+            <div class="section__container subscribe__container">
+                <div class="subscribe__content">
+                    <p class="section__subheader">OUR MEMBESHIP PROGRAM</p>
+                    <h2 class="section__header">
+                        Join To Our Membership Program
+                    </h2>
+                    <p class="section__description">
+                        Join our membership program to receive a 15% discount on
+                        all booking services. Additionally, members enjoy
+                        complimentary bottled water and priority booking status
+                        with guaranteed availability.
+                    </p>
+                </div>
+                <div class="subscribe__form">
+                    <img
+                        class="membership"
+                        src="./assets/membership.png"
+                        alt=""
+                    />
+                    <a
+                        href="https://checkout.square.site/merchant/ML8CQS88119F8/checkout/2IN3KZW2S4CZSSEYLWBJG4BT"
+                    >
+                        <button class="btn">Click for join</button>
+                    </a>
+                </div>
+            </div>
+            <div class="section__container footer__container">
+                <div class="footer__col">
+                    <div class="logo nav__logo">
+                        <a href="#">
+                            <h2><span>SHM</span> Limo Transportation</h2>
+                        </a>
+                    </div>
+                    <p class="section__description">
+                        Enhancing Premium And Luxury Transportation in
+                        Nashville.
+                    </p>
+                    <ul class="footer__socials">
+                        <li>
+                            <a
+                                target="_blank"
+                                href="https://www.instagram.com/shm_nashville/?igsh=MTJxM3dqMHNrNXdzaA%3D%3D&utm_source=qr"
+                            >
+                                <i class="ri-instagram-line"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a target="_blank" href="https://wa.me/16299005454">
+                                <i class="ri-whatsapp-line"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer__col">
+                    <h4>Our Services</h4>
+                    <ul class="footer__links">
+                        <li>
+                            <a href="#service">POINT-TO-POINT TRANSPORTATION</a>
+                        </li>
+                        <li><a href="#service">HOURLY PRIVATE RIDES</a></li>
+                        <li><a href="#service">AIRPORT TRANSPORTATION</a></li>
+                        <li>
+                            <a href="#service">EVENT TRANSPORTATION SERVICES</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer__col">
+                    <h4>Contact Info</h4>
+                    <ul class="footer__links">
+                        <li>
+                            <p>
+                                Discover the pleasure of personalized
+                                transportation services where every ride is
+                                meticulously crafted for your comfort and
+                                convenience.
+                            </p>
+                        </li>
+                        <li>
+                            <p>Phone: <span>+1 629-900 5454</span></p>
+                        </li>
+                        <li>
+                            <p>Email: <span>Shmllc.7@gmail.com</span></p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+        <div class="footer__bar">
+            Copyright © <span id="currentYear"></span> SHM Limo Transportation.
+            All rights reserved.
+        </div>
+
+        <script>
+            document.querySelectorAll(".faq-question").forEach((item) => {
+                item.addEventListener("click", (event) => {
+                    const answer = item.nextElementSibling;
+                    const toggleBtn = item.querySelector(".toggle-btn");
+                    const isOpen = answer.style.display === "block";
+                    answer.style.display = isOpen ? "none" : "block";
+                    toggleBtn.textContent = isOpen ? "+" : "-";
+                });
+            });
+
+            document
+                .getElementById("faq-btn")
+                .addEventListener("click", function () {
+                    document.getElementById("faq-section").style.display =
+                        "block";
+                    document.getElementById("policy-section").style.display =
+                        "none";
+                    this.classList.add("active");
+                    document
+                        .getElementById("policy-btn")
+                        .classList.remove("active");
+                });
+
+            document
+                .getElementById("policy-btn")
+                .addEventListener("click", function () {
+                    document.getElementById("faq-section").style.display =
+                        "none";
+                    document.getElementById("policy-section").style.display =
+                        "block";
+                    this.classList.add("active");
+                    document
+                        .getElementById("faq-btn")
+                        .classList.remove("active");
+                });
+
+            document.getElementById("currentYear").textContent =
+                new Date().getFullYear();
+        </script>
+
+        <script src="https://unpkg.com/scrollreveal"></script>
+        <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+        <script src="main.js"></script>
     </body>
 </html>
