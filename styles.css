@@ -493,6 +493,25 @@ nav {
 .membership {
     width: 150px;
 }
+.sightseeing-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.sightseeing-subtext {
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+.sightseeing-grid {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+.sightseeing-item p {
+    margin: 14px 0;
+    font-weight: bold;
+}
 
 @media (width > 480px) {
     .header__content h1 {
@@ -531,6 +550,43 @@ nav {
 }
 
 @media (width > 768px) {
+    .sightseeing-section {
+        text-align: center;
+        padding: 20px;
+    }
+    .sightseeing-title {
+        font-size: 32px;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+    .sightseeing-subtext {
+        font-size: 16px;
+        margin-bottom: 20px;
+    }
+    .sightseeing-grid {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+    .sightseeing-item {
+        width: 22%;
+        margin: 10px 0;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+        /* display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: start; */
+    }
+    .sightseeing-item img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+    }
+    .sightseeing-item p {
+        margin: 10px 0;
+        font-weight: bold;
+    }
     .subscribe__container {
         display: flex;
         justify-content: space-between;
@@ -616,7 +672,7 @@ nav {
     }
 
     .customisation__grid {
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(3, 1fr);
     }
 
     .price__grid {
