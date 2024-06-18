@@ -3,6 +3,10 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta
+            http-equiv="Content-Security-Policy"
+            content="default-src 'self'; script-src 'self' https://formspree.io; style-src 'self' 'unsafe-inline';"
+        />
         <link
             href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
             rel="stylesheet"
@@ -155,6 +159,7 @@
                     action="https://formspree.io/f/moqggzyb"
                     method="POST"
                     class="contact-form"
+                    novalidate
                 >
                     <div class="form-group">
                         <label for="full-name">Full Name</label>
@@ -174,6 +179,7 @@
                             name="email"
                             placeholder="Enter your email"
                             required
+                            autocomplete="off"
                         />
                     </div>
                     <div class="form-group">
@@ -196,6 +202,7 @@
                             required
                         ></textarea>
                     </div>
+                    <input type="text" name="_honeypot" style="display: none" />
                     <button type="submit">Submit</button>
                 </form>
             </div>
